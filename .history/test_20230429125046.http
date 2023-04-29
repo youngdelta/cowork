@@ -1,0 +1,30 @@
+GET http://localhost:3000/api/members
+####
+GET http://localhost:3000/api/members?team=marketing
+
+####
+GET http://localhost:3000/api/members?team=engineering
+
+####
+GET http://localhost:3000/api/members/12344
+
+
+
+###
+POST http://localhost:3000/api/members
+Content-Type: application/json
+
+{
+    "id": 11,
+    "name": "Zero",
+    "team":"Engineering"
+}
+
+###
+PUT http://localhost:3000/api/members/111
+Content-Type: application/json
+
+{
+    "id": 111,
+    "author":"yyy"
+}

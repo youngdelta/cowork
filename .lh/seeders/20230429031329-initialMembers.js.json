@@ -1,0 +1,30 @@
+{
+    "sourceFile": "seeders/20230429031329-initialMembers.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1682738098661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682738105036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n         birthday: '1992/09/17',\n         profileImage: 'profile10.png',\n       },\n     ]\n-  },\n+  }, }], {});\n \n   async down (queryInterface, Sequelize) {\n     /**\n      * Add commands to revert seed here.\n"
+                },
+                {
+                    "date": 1682738116468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,11 +122,9 @@\n         phoneNumber: '010-xxxx-xxxx',\n         admissionDate: '2019/11/12',\n         birthday: '1992/09/17',\n         profileImage: 'profile10.png',\n-      },\n-    ]\n-  }], {});\n+      }], {});\n \n   async down (queryInterface, Sequelize) {\n     /**\n      * Add commands to revert seed here.\n"
+                },
+                {
+                    "date": 1682738132050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,11 @@\n         phoneNumber: '010-xxxx-xxxx',\n         admissionDate: '2019/11/12',\n         birthday: '1992/09/17',\n         profileImage: 'profile10.png',\n-      }], {});\n+      },\n+    ]\n+  ], {});\n \n   async down (queryInterface, Sequelize) {\n     /**\n      * Add commands to revert seed here.\n"
+                }
+            ],
+            "date": 1682738098661,
+            "name": "Commit-0",
+            "content": "'use strict';\n\n/** @type {import('sequelize-cli').Migration} */\nmodule.exports = {\n  async up (queryInterface, Sequelize) {\n    /**\n     * Add seed commands here.\n     *\n     * Example:\n     * await queryInterface.bulkInsert('People', [{\n     *   name: 'John Doe',\n     *   isBetaMember: false\n     * }], {});\n    */\n\n    await queryInterface.bulkInsert('Members',[\n      {\n        id: 1,\n        name: 'Alex',\n        team: 'engineering',\n        position: 'Server Developer',\n        emailAddress: 'alex@google.com',\n        phoneNumber: '010-xxxx-xxxx',\n        admissionDate: '2018/12/10',\n        birthday: '1994/11/08',\n        profileImage: 'profile1.png',\n      },\n      {\n        id: 2,\n        name: 'Benjamin',\n        team: 'engineering',\n        position: 'Server Developer',\n        emailAddress: 'benjamin@google.com',\n        phoneNumber: '010-xxxx-xxxx',\n        admissionDate: '2021/01/20',\n        birthday: '1992/03/26',\n        profileImage: 'profile2.png',\n      },\n      {\n        id: 3,\n        name: 'Charles',\n        team: 'engineering',\n        position: 'Android Developer',\n        emailAddress: 'charles@google.com',\n        phoneNumber: '010-xxxx-xxxx',\n        admissionDate: '2018/10/09',\n        birthday: '1994/09/08',\n        profileImage: 'profile3.png',\n      },\n      {\n        id: 4,\n        name: 'Eric',\n        team: 'engineering',\n        position: 'Web Frontend Developer',\n        emailAddress: 'eric@google.com',\n        phoneNumber: '010-xxxx-xxxx',\n        admissionDate: '2020/04/07',\n        birthday: '1995/04/10',\n        profileImage: 'profile4.png',\n      },\n      {\n        id: 5,\n        name: 'Danial',\n        team: 'marketing',\n        position: 'Marketing Manager',\n        emailAddress: 'danial@google.com',\n        phoneNumber: '010-xxxx-xxxx',\n        admissionDate: '2021/04/21',\n        birthday: '1991/07/12',\n        profileImage: 'profile5.png',\n      },\n      {\n        id: 6,\n        name: 'George',\n        team: 'marketing',\n        position: 'Marketing Staff',\n        emailAddress: 'george@google.com',\n        phoneNumber: '010-xxxx-xxxx',\n        admissionDate: '2020/01/06',\n        birthday: '1997/02/09',\n        profileImage: 'profile6.png',\n      },\n      {\n        id: 7,\n        name: 'Henry',\n        team: 'marketing',\n        position: 'Marketing Staff',\n        emailAddress: 'henry@google.com',\n        phoneNumber: '010-xxxx-xxxx',\n        admissionDate: '2020/04/03',\n        birthday: '1997/08/18',\n        profileImage: 'profile7.png',\n      },\n      {\n        id: 8,\n        name: 'James',\n        team: 'sales',\n        position: 'Sales Manager',\n        emailAddress: 'james@google.com',\n        phoneNumber: '010-xxxx-xxxx',\n        admissionDate: '2020/11/26',\n        birthday: '1993/05/22',\n        profileImage: 'profile8.png',\n      },\n      {\n        id: 9,\n        name: 'Kevin',\n        team: 'sales',\n        position: 'Sales Staff',\n        emailAddress: 'kevin@google.com',\n        phoneNumber: '010-xxxx-xxxx',\n        admissionDate: '2020/06/19',\n        birthday: '1989/06/10',\n        profileImage: 'profile9.png',\n      },\n      {\n        id: 10,\n        name: 'Michael',\n        team: 'sales',\n        position: 'Sales Staff',\n        emailAddress: 'michael@google.com',\n        phoneNumber: '010-xxxx-xxxx',\n        admissionDate: '2019/11/12',\n        birthday: '1992/09/17',\n        profileImage: 'profile10.png',\n      },\n    ]\n  },\n\n  async down (queryInterface, Sequelize) {\n    /**\n     * Add commands to revert seed here.\n     *\n     * Example:\n     * await queryInterface.bulkDelete('People', null, {});\n     */\n  }\n};\n"
+        }
+    ]
+}

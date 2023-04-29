@@ -1,0 +1,22 @@
+{
+    "sourceFile": "config/config.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1682719129575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682719147104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +1,23 @@\n {\n   \"development\": {\n     \"username\": \"root\",\n     \"password\": \"admin\",\n-    \"database\": \"database_development\",\n+    \"database\": \"COWORK\",\n     \"host\": \"127.0.0.1\",\n     \"dialect\": \"mysql\"\n   },\n   \"test\": {\n     \"username\": \"root\",\n     \"password\": \"admin\",\n-    \"database\": \"database_test\",\n+    \"database\": \"COWORK\",\n     \"host\": \"127.0.0.1\",\n     \"dialect\": \"mysql\"\n   },\n   \"production\": {\n     \"username\": \"root\",\n     \"password\": \"admin\",\n-    \"database\": \"database_production\",\n+    \"database\": \"COWORK\",\n     \"host\": \"127.0.0.1\",\n     \"dialect\": \"mysql\"\n   }\n }\n"
+                }
+            ],
+            "date": 1682719129575,
+            "name": "Commit-0",
+            "content": "{\n  \"development\": {\n    \"username\": \"root\",\n    \"password\": \"admin\",\n    \"database\": \"database_development\",\n    \"host\": \"127.0.0.1\",\n    \"dialect\": \"mysql\"\n  },\n  \"test\": {\n    \"username\": \"root\",\n    \"password\": \"admin\",\n    \"database\": \"database_test\",\n    \"host\": \"127.0.0.1\",\n    \"dialect\": \"mysql\"\n  },\n  \"production\": {\n    \"username\": \"root\",\n    \"password\": \"admin\",\n    \"database\": \"database_production\",\n    \"host\": \"127.0.0.1\",\n    \"dialect\": \"mysql\"\n  }\n}\n"
+        }
+    ]
+}

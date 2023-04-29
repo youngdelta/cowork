@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1682718264392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682719286054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,13 @@\n const express = require('express');\r\n const app = express();\r\n+const limit = require('express-rate-limit');\r\n \r\n+exports.limiter = new limit({\r\n+\twindowMs:60000,\r\n+\tmax:5\r\n+})\r\n+\r\n /*\r\n 리퀘스트의 바디에 들어있는 JSON 데이터를\r\n req 객체의 body 프로퍼티에 설정하도록 했습니다.\r\n */\r\n"
+                },
+                {
+                    "date": 1682719305930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,11 @@\n \r\n exports.limiter = new limit({\r\n \twindowMs: 60000,\r\n \tmax: 5,\r\n+\tdelayMs: 1000,\r\n+\thandler(req, res) {\r\n+\t}\r\n });\r\n \r\n /*\r\n 리퀘스트의 바디에 들어있는 JSON 데이터를\r\n"
+                },
+                {
+                    "date": 1682719330557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,13 @@\n exports.limiter = new limit({\r\n \twindowMs: 60000,\r\n \tmax: 5,\r\n \tdelayMs: 1000,\r\n-\thandler(req, res) {},\r\n+\thandler(req, res) {\r\n+\t\tres.status(this.statusCode).json({\r\n+\t\t\tcode:this.statusCode\r\n+\t\t})\r\n+\t},\r\n });\r\n \r\n /*\r\n 리퀘스트의 바디에 들어있는 JSON 데이터를\r\n"
+                }
+            ],
+            "date": 1682718264392,
+            "name": "Commit-0",
+            "content": "const express = require('express');\r\nconst app = express();\r\n\r\n/*\r\n리퀘스트의 바디에 들어있는 JSON 데이터를\r\nreq 객체의 body 프로퍼티에 설정하도록 했습니다.\r\n*/\r\napp.use(express.json());\r\n\r\nlet members = require('./data/picsum');\r\n\r\napp.get('/', (req, res) => {\r\n\tres.send('<h1>Home</h1>');\r\n});\r\n\r\napp.get('/api/members', (req, res) => {\r\n\tconst { author } = req.query;\r\n\t(author && res.send(members.filter((m) => m.author == author))) ||\r\n\t\tres.send(members);\r\n});\r\n\r\napp.get('/api/members/:id', (req, res) => {\r\n\tconst { id } = req.params;\r\n\tconst member = members.find((m) => m.id === id);\r\n\r\n\t(member && res.send(`<img src=\"${member?.download_url}\" alert=\"\" />`)) ||\r\n\t\tres.status(404).send({ message: 'There is no such member' });\r\n\r\n\t// res.send(members);\r\n});\r\n\r\napp.post('/api/members', (req, res) => {\r\n\t// console.log(req.body);\r\n\tconst newMember = req.body;\r\n\tmembers.push(newMember);\r\n\tres.send(newMember);\r\n});\r\n\r\n// 수정\r\napp.put('/api/members/:id', (req, res) => {\r\n\tconst { id } = req.params;\r\n\tconst newInfo = req.body;\r\n\tconst member = members.find((m) => m.id == id);\r\n\t(member &&\r\n\t\t(() => {\r\n\t\t\tObject.keys(newInfo).forEach(\r\n\t\t\t\t(prop) => (member[prop] = newInfo[prop]),\r\n\t\t\t);\r\n\t\t\tres.send(member);\r\n\t\t})()) ||\r\n\t\tres.status(404).send({ message: 'There is no such member' });\r\n});\r\n\r\n// 삭제\r\n\r\napp.listen(3000, (_) => console.log('server Listening start...'));\r\n"
+        }
+    ]
+}

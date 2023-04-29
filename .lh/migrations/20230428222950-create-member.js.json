@@ -1,0 +1,22 @@
+{
+    "sourceFile": "migrations/20230428222950-create-member.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1682737479454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682737488196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,14 +34,15 @@\n         type: Sequelize.STRING\n       },\n       createdAt: {\n         allowNull: false,\n-        type: Sequelize.DATE\n+        type: Sequelize.DATE,\n         defaultValue:Sequelize.fn('now')\n       },\n       updatedAt: {\n         allowNull: false,\n-        type: Sequelize.DATE\n+        type: Sequelize.DATE,\n+        defaultValue:Sequelize.fn('now')\n       }\n     });\n   },\n   async down(queryInterface, Sequelize) {\n"
+                }
+            ],
+            "date": 1682737479454,
+            "name": "Commit-0",
+            "content": "'use strict';\n/** @type {import('sequelize-cli').Migration} */\nmodule.exports = {\n  async up(queryInterface, Sequelize) {\n    await queryInterface.createTable('Members', {\n      id: {\n        allowNull: false,\n        autoIncrement: true,\n        primaryKey: true,\n        type: Sequelize.INTEGER\n      },\n      name: {\n        type: Sequelize.STRING\n      },\n      team: {\n        type: Sequelize.STRING\n      },\n      position: {\n        type: Sequelize.STRING\n      },\n      emailAddress: {\n        type: Sequelize.STRING\n      },\n      phoneNumber: {\n        type: Sequelize.STRING\n      },\n      admissionDate: {\n        type: Sequelize.DATE\n      },\n      birthday: {\n        type: Sequelize.DATE\n      },\n      profileImage: {\n        type: Sequelize.STRING\n      },\n      createdAt: {\n        allowNull: false,\n        type: Sequelize.DATE\n        defaultValue:Sequelize.fn('now')\n      },\n      updatedAt: {\n        allowNull: false,\n        type: Sequelize.DATE\n      }\n    });\n  },\n  async down(queryInterface, Sequelize) {\n    await queryInterface.dropTable('Members');\n  }\n};"
+        }
+    ]
+}
